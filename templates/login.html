@@ -1,0 +1,35 @@
+<!-- templates/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <form method="post" action="/login" class="bg-white p-8 rounded shadow-md w-full max-w-md space-y-4">
+    <h2 class="text-2xl font-bold text-center">Login</h2>
+
+    <input type="email" name="email" placeholder="Email"
+           class="w-full border p-2 rounded focus:outline-none focus:ring" required />
+
+    <input type="password" name="pwd" placeholder="Password"
+           class="w-full border p-2 rounded focus:outline-none focus:ring" required />
+
+    {% if error %}
+      <p class="text-red-500">{{ error }}</p>
+    {% endif %}
+
+    <button type="submit" class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">
+      Log In
+    </button>
+
+    <p class="text-sm text-center">
+      Don't have an account?
+      <a href="/signup" class="text-blue-600 hover:underline">Sign Up</a>
+    </p>
+  </form>
+
+</body>
+</html>
